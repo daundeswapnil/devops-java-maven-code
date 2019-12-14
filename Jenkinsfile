@@ -16,18 +16,7 @@ node{
         }
     }
 
-    stage('') {
+    stage('Upload To Nexus') {
       nexusArtifactUploader credentialsId: 'nexus-admin', groupId: 'com.example', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '2.0-SNAPSHOT'
     }
-/*
-    stage('Build Docker Image'){
-     sh 'docker build -t localhost:8081/java-maven-junit-helloworld:2.0.0 .'
-     }
-
-     stage('Upload To Nexus'){     
-      withCredentials([string(credentialsId: 'nexus-admin', variable: 'nexusPwd')]) {
-        sh "docker login -u admin -p ${nexusPwd} localhost:8081"
-      }      
-      sh "docker push localhost:8081/java-maven-junit-helloworld:2.0.0"
-     }*/
 }
