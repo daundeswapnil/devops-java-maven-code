@@ -16,12 +16,6 @@ node{
         }
     }
     stage('Upload To Nexus') {
-      nexusArtifactUploader credentialsId: 'nexus-admin', 
-                            groupId: 'com.example',
-                            nexusUrl: 'localhost:8081/nexus',
-                            nexusVersion: 'nexus3',
-                            protocol: 'http',
-                            repository: 'maven-snapshots',
-                            version: '2.0-SNAPSHOT'
+      nexusArtifactUploader credentialsId: 'nexus-admin', groupId: 'com.example', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '2.0-SNAPSHOT'
     }
 }
