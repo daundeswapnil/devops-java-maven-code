@@ -87,7 +87,7 @@
         <!-- Integration tests are run during the verify phase. -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.22.0</version>
+        <version>2.19.1</version>
         <executions>
           <execution>
             <goals>
