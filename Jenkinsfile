@@ -16,6 +16,8 @@ node{
         }
     }
     stage('Upload To Nexus') {
-      nexusArtifactUploader credentialsId: 'nexus-admin', groupId: 'com.example', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '2.0-SNAPSHOT'
+      def mvnHome =  tool name: 'MAVEN', type: 'maven'   
+      sh "${mvnHome}/bin/mvn deploy"
+      //nexusArtifactUploader credentialsId: 'nexus-admin', groupId: 'com.example', nexusUrl: 'localhost:8081/nexus', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '2.0-SNAPSHOT'
     }
 }
