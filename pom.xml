@@ -58,14 +58,21 @@
     </dependency>
   </dependencies>
 
+  <repositories>
+    <repository>
+      <id>maven-public</id>
+      <url>http://localhost:8081/repository/maven-public/</url>
+    </repository>
+  </repositories>
+
   <distributionManagement>
      <snapshotRepository>
-        <id>nexusRepo</id>
+        <id>maven-snapshots</id>
         <url>http://localhost:8081/repository/maven-snapshots/</url>
      </snapshotRepository>
     
     <repository>
-        <id>nexusRepo</id>
+        <id>maven-releases</id>
         <url>http://localhost:8081/repository/maven-releases/</url>
     </repository>
     </distributionManagement>
