@@ -6,7 +6,7 @@ node{
    stage('Compile-Package'){
       // Get maven home path
       def mvnHome =  tool name: 'MAVEN', type: 'maven'   
-      sh "${mvnHome}/bin/mvn clean package -e"
+      sh "${mvnHome}/bin/mvn clean package"
    }
    
    stage('SonarQube Analysis') {
